@@ -1,4 +1,4 @@
-# Definición de una función para calcular el factorial de un número
+# Definición de una función para calcular el factorial de un número Cambio 1
 def factorial(n):
     if n == 0:
         return 1
@@ -14,4 +14,4 @@ if num < 0:
 elif num == 0:
     print("El factorial de 0 es 1")
 else:
-    print("El factorial de", num, "es", factorial(num))
+    print("El factorial de", num, "es", factorial(num)) 
