@@ -1,4 +1,4 @@
-# Definición de una función para calcular el factorial de un número
+# Definición de una función para calcular el factorial de un númeromkjkjkjk
 def factorial(n):
     if n == 0:
         return 1
