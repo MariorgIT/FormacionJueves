@@ -10,7 +10,7 @@ aaa
 # Solicitar al usuario que ingrese un número entero positivo
 num = int(input("Ingrese un número entero positiv bbbo: "))
 
-# Verificar si el número ingresado es positivo
+# Verificar si el número ingresado es positivo o no
 if num < 0:
     print("El factorial no está definidccco para números negativos.")
 elif num == 0:
