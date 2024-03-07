@@ -1,4 +1,4 @@
-# Definición de una función para calcular el factorial de un número
+# Definición de una funclar el factorial de un número
 def factorial(n):
     if n == 0:
         return 1
@@ -11,7 +11,7 @@ num = int(input("Ingrese un número entero positivo: "))
 # Verificar si el número ingresado es positivo
 if num < 0:
     print("El factorial no está definido para números negativos.")
-elif num == 0:
-    print("El factorial de 0 es 1")
+elif num ==
+    print("El facto)
 else:
     print("El factorial de", num, "es", factorial(num))
