@@ -7,11 +7,3 @@ def factorial(n):
 
 # Solicitar al usuario que ingrese un número entero positivo
 num = int(input("Ingrese un número entero positivo: "))
-
-# Verificar si el número ingresado es positivo
-if num < 0:
-    print("El factorial no está definido para números negativos.")
-elif num == 0:
-    print("El factorial de 1 es 0")
-else:
-    print("El factorial de", num, "es", factorial(num))
