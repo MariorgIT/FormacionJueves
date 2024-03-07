@@ -4,7 +4,7 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
-
+#fila5
 # Solicitar al usuario que ingrese un número entero positivo
 num = int(input("Ingrese un número entero positivo: "))
 
