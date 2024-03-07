@@ -12,6 +12,6 @@ num = int(input("Ingrese un número entero positivo: "))
 if num < 0:
     print("El factorial no está definido para números negativos.")
 elif num == 0:
-    print("El factorial de 0 es 1")
+    print("El factorial de 0 es 1, resultado abajo")
 else:
     print("El factorial de", num, "es", factorial(num))
