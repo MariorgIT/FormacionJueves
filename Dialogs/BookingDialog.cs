@@ -3,6 +3,7 @@
 
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -18,9 +19,9 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         public BookingDialog()
             : base(nameof(BookingDialog))
         {
-            AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new ConfirmPrompt(nameof(ConfirmPrompt)));
             AddDialog(new DateResolverDialog());
+            AddDialog(new TextPrompt(nameof(TextPrompt), MalagaValidator));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 DestinationStepAsync,
@@ -104,6 +105,20 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         {
             var timexProperty = new TimexProperty(timex);
             return !timexProperty.Types.Contains(Constants.TimexTypes.Definite);
+        }
+
+
+        private static Task<bool> MalagaValidator(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
+        {
+            string resultado = promptContext.Context.Activity.Text;
+            if (resultado.ToString().ToLower().Equals("malaga") || resultado.ToString().ToLower().Equals("malaga"))
+            {
+                return Task.FromResult(true);
+            }
+            promptContext.Context.SendActivityAsync(MessageFactory.Text(" Illo, no puedes ir alli.", inputHint: InputHints.IgnoringInput), cancellationToken);
+
+
+            return Task.FromResult(false);
         }
     }
 }

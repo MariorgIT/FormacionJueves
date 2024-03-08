@@ -11,6 +11,7 @@ using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 
 namespace Microsoft.BotBuilderSamples.Dialogs
 {
+
     public class DateResolverDialog : CancelAndHelpDialog
     {
         private const string PromptMsgText = "When would you like to travel?";
@@ -86,5 +87,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
             return Task.FromResult(false);
         }
+
+
     }
 }
