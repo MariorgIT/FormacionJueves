@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "igbEtd3RJ8Uy9VuxmVPn4xcQwgEHt8q3ZHZmesYv4S0=",
+  "Source": "CoreBot",
+  "BasePath": "_content/CoreBot",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CoreBot\\wwwroot",
+      "Source": "CoreBot",
+      "ContentRoot": "C:\\Users\\FE782TC\\OneDrive - EY\\Desktop\\13.core-bot\\wwwroot\\",
+      "BasePath": "_content/CoreBot",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\FE782TC\\OneDrive - EY\\Desktop\\13.core-bot\\wwwroot\\default.htm",
+      "SourceId": "CoreBot",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FE782TC\\OneDrive - EY\\Desktop\\13.core-bot\\wwwroot\\",
+      "BasePath": "_content/CoreBot",
+      "RelativePath": "default.htm",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\default.htm"
+    }
+  ]
+}
