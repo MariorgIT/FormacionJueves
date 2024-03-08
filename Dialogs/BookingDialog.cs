@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
@@ -18,7 +19,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         public BookingDialog()
             : base(nameof(BookingDialog))
         {
-            AddDialog(new TextPrompt(nameof(TextPrompt)));
+            AddDialog(new TextPrompt(nameof(TextPrompt), DestinationPromptValidator));
             AddDialog(new ConfirmPrompt(nameof(ConfirmPrompt)));
             AddDialog(new DateResolverDialog());
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
@@ -50,7 +51,6 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         private async Task<DialogTurnResult> OriginStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             var bookingDetails = (BookingDetails)stepContext.Options;
-
             bookingDetails.Destination = (string)stepContext.Result;
 
             if (bookingDetails.Origin == null)
@@ -104,6 +104,14 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         {
             var timexProperty = new TimexProperty(timex);
             return !timexProperty.Types.Contains(Constants.TimexTypes.Definite);
+        }
+        private static Task<bool> DestinationPromptValidator(PromptValidatorContext <string> promptcontext, CancellationToken cancellationToken)
+        {
+        var destination = promptcontext.Context.Activity.Text;
+        if (destination.ToString().Equals("Malaga"))
+        {
+            return Task.FromResult(true);
+        } return Task.FromResult(false);
         }
     }
 }
